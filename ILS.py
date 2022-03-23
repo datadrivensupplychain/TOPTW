@@ -4,7 +4,7 @@ class ILS:
 		
 		for l in range(S,S+R+1):
 			i = 0 if l >= len(Locations) else l
-			print "removing location: ",Locations[i].id_location
+			print("removing location: ",Locations[i].id_location)
 			Locations.remove(Locations[i])
 
 		return Locations

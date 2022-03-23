@@ -7,24 +7,24 @@ import time
 from sys import argv 
 
 def print_locations(Locations):
-	print "TOUR: "
-	print "Start: ",start
-	print "End: ",end
-	print "Locations:"
+	print("TOUR: ")
+	print("Start: ",start)
+	print("End: ",end)
+	print("Locations:")
 	for e in Locations:
-		print "-- location ID: ",e.id_location
-		print "-- name: ",e.name
-		print "-- score: ",e.score
-		print "-- opening: ",e.opening
-		print "-- closing: ",e.closing
-		print "-- arrival: ",e.arrival
-		print "-- required_time: ",e.required_time
-		print "-- wait: ",e.wait
-		print "-- max_shift: ",e.max_shift
-		print "-- shift: ",e.shift
-		print "-- ratio: ",e.ratio
-		print "-- leave: ",e.leave
-		print " "
+		print( "-- location ID: ",e.id_location)
+		print( "-- name: ",e.name)
+		print( "-- score: ",e.score)
+		print( "-- opening: ",e.opening)
+		print( "-- closing: ",e.closing)
+		print( "-- arrival: ",e.arrival)
+		print( "-- required_time: ",e.required_time)
+		print( "-- wait: ",e.wait)
+		print( "-- max_shift: ",e.max_shift)
+		print( "-- shift: ",e.shift)
+		print( "-- ratio: ",e.ratio)
+		print( "-- leave: ",e.leave)
+		print( " ")
 	
 def write_file(Locations,file_name):
 	file = open(file_name+"_tour.txt","w")
@@ -192,8 +192,8 @@ print_locations(Locations)
 ##########################
 #instance = random_instance()
 #InsertionStep = insertion_step()
-
-def main(id_file):
+def main(file_name):
+#def main(id_file,file_name):
 
 	#for eT in range(1,3):
 
@@ -206,7 +206,7 @@ def main(id_file):
 
 	#instance = random_instance()
 
-	file_name = 'c_r_rc_100_100/'+'r10'+str(id_file)+'.txt'
+	#file_name = 'c_r_rc_100_100/'+'r10'+str(id_file)+'.txt'
 
 	Locations,start,end = instance.load_instance(n,file_name)
 
@@ -330,10 +330,12 @@ def main(id_file):
 	gap = (ils-bk)/ils
 	#print "OriginalSolution: ", getTourRatio( OriginalSolution )
 	#print "EnhancedSolution: ", getTourRatio( BestFound['tour'] )
-	print nombre_instancia,", ",bk,",",ils,",",gap*100,",",elapsed_time
+	print(nombre_instancia,", ",bk,",",ils,",",gap*100,",",elapsed_time)
 	write_file(BestFound['tour'],file_name)
 
 instance = random_instance()
 InsertionStep = insertion_step()
 
-main(int(argv[1]))
+#main(int(argv[1]))
+##run all modules first (F5 in Spyder) then 
+#main(file_name = "C:/Users/W530/Documents/DDSC/TOPTW-master/c_r_rc_100_100/c108.txt")
